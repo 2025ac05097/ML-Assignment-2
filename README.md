@@ -52,13 +52,3 @@ Install the required Python packages using:
 
 ```bash
 py -m pip install -r requirements.txt
-
-Add:
-
-```markdown
-## Running the Application
-
-Start the Streamlit application using:
-
-```bash
-py -m streamlit run app.py
