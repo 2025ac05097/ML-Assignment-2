@@ -70,7 +70,7 @@ All five models were trained and evaluated using the same Bank Marketing classif
 
 ## 5. Evaluation Metrics
 
-The following five evaluation metrics were used:
+The following six evaluation metrics were used:
 
 - Accuracy
 - ROC-AUC
