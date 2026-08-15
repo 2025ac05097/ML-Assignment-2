@@ -2,19 +2,61 @@
 
 ## Machine Learning Assignment 2 - Bank Marketing Classification
 
-This project implements a machine learning classification solution for the Bank Marketing dataset. The objective is to predict whether a customer will subscribe to a term deposit based on customer and campaign-related attributes.
-
 ## 1. Problem Statement
 
 The objective of this project is to build and compare multiple machine learning classification models for predicting whether a customer will subscribe to a bank term deposit.
 
-The project evaluates five classification algorithms using multiple performance metrics. The aim is to identify the model that provides the best overall balance between precision and recall.
+The project uses the Bank Marketing dataset and evaluates five different classification algorithms using multiple performance metrics.
+
+The main objective is to compare the models and identify the best-performing model based on the evaluation results.
 
 ---
 
-## 2. Machine Learning Models Used
+## 2. Dataset Description
 
-The following five classification models are implemented and evaluated:
+### Dataset Name
+
+Bank Marketing Dataset
+
+### Problem Type
+
+Binary Classification
+
+### Target Variable
+
+`y`
+
+The target variable indicates whether the customer subscribed to a term deposit:
+
+- `yes` - Customer subscribed
+- `no` - Customer did not subscribe
+
+The dataset contains customer demographic information, account-related information, and campaign-related attributes.
+
+The Bank Marketing dataset contains 45,211 records and 16 predictor features along with the target variable.
+
+---
+
+## 3. GitHub Repository
+
+GitHub Repository:
+
+https://github.com/2025ac05097/ML-Assignment-2
+
+The repository contains:
+
+- Complete source code
+- Trained machine learning models
+- Test dataset
+- Requirements file
+- README documentation
+- Streamlit application
+
+---
+
+## 4. Machine Learning Models Used
+
+The following five classification models were implemented:
 
 1. Logistic Regression
 2. Decision Tree
@@ -22,13 +64,13 @@ The following five classification models are implemented and evaluated:
 4. Gaussian Naive Bayes
 5. Random Forest
 
-All five models are evaluated using the same test dataset to provide a consistent comparison.
+All five models were trained and evaluated using the same Bank Marketing classification problem.
 
 ---
 
-## 3. Evaluation Metrics
+## 5. Evaluation Metrics
 
-The models are evaluated using the following performance metrics:
+The following six evaluation metrics were used:
 
 - Accuracy
 - ROC-AUC
@@ -37,210 +79,142 @@ The models are evaluated using the following performance metrics:
 - F1-Score
 - Matthews Correlation Coefficient (MCC)
 
-These metrics provide a more complete evaluation of classification performance, particularly for the positive class.
+These metrics provide a comprehensive evaluation of the classification performance instead of relying only on accuracy.
 
 ---
 
-## 4. Model Performance Comparison
+## 6. Model Performance Comparison
 
-The following table shows the performance of all five machine learning models:
+The following results were obtained from the test dataset used in the project.
 
-| Rank | Model | Accuracy | ROC-AUC | Precision | Recall | F1-Score | MCC |
-|---:|---|---:|---:|---:|---:|---:|---:|
-| 1 | Decision Tree | 0.9008 | 0.8655 | 0.6186 | 0.3970 | **0.4836** | 0.4446 |
-| 2 | Gaussian Naive Bayes | 0.8548 | 0.8101 | 0.4059 | **0.5198** | 0.4559 | 0.3774 |
-| 3 | Logistic Regression | **0.9012** | 0.9056 | 0.6445 | 0.3478 | 0.4518 | 0.4261 |
-| 4 | KNN | 0.8996 | 0.8513 | 0.6298 | 0.3440 | 0.4450 | 0.4169 |
-| 5 | Random Forest | 0.8977 | **0.9225** | **0.7509** | 0.1881 | 0.3008 | 0.3427 |
-
-The models are ranked based on F1-Score because F1-Score provides a balanced measure of Precision and Recall.
+| ML Model | Accuracy | ROC-AUC | Precision | Recall | F1-Score | MCC |
+|---|---:|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.9012 | 0.9056 | 0.6445 | 0.3478 | 0.4518 | 0.4261 |
+| Decision Tree | 0.9008 | 0.8655 | 0.6186 | 0.3970 | **0.4836** | **0.4446** |
+| KNN | 0.8996 | 0.8513 | 0.6298 | 0.3440 | 0.4450 | 0.4169 |
+| Gaussian Naive Bayes | 0.8548 | 0.8101 | 0.4059 | **0.5198** | 0.4559 | 0.3774 |
+| Random Forest | 0.8977 | **0.9225** | **0.7509** | 0.1881 | 0.3008 | 0.3427 |
 
 ---
 
-## 5. Model-wise Observations
+## 7. Model-wise Observations
 
-### 5.1 Logistic Regression
+### 7.1 Logistic Regression
 
 Logistic Regression achieved an accuracy of 0.9012 and an ROC-AUC of 0.9056.
 
-Its precision was 0.6445, while its recall was 0.3478. The model provides a strong baseline classification performance but does not identify as many positive cases as Gaussian Naive Bayes.
+It achieved a precision of 0.6445, indicating reasonable performance in identifying customers predicted as subscribers.
 
-The F1-Score of Logistic Regression was 0.4518.
+However, its recall was 0.3478, meaning that a significant number of actual subscribers were not identified.
+
+The F1-Score of 0.4518 indicates moderate overall balance between precision and recall.
 
 ---
 
-### 5.2 Decision Tree
+### 7.2 Decision Tree
 
 Decision Tree achieved an accuracy of 0.9008 and an ROC-AUC of 0.8655.
 
-Its precision was 0.6186 and recall was 0.3970. The model achieved the highest F1-Score among all five models:
+It achieved a recall of 0.3970, which was higher than Logistic Regression and KNN.
 
-**F1-Score = 0.4836**
+Most importantly, Decision Tree achieved the highest F1-Score of 0.4836 among all five models.
 
-Therefore, based on the selected F1-Score criterion, Decision Tree was identified as the overall best-performing model.
+It also achieved the highest MCC score of 0.4446.
+
+Therefore, based on the F1-Score and MCC, Decision Tree provided the best overall balance between precision and recall in this experiment.
 
 ---
 
-### 5.3 K-Nearest Neighbors (KNN)
+### 7.3 K-Nearest Neighbors (KNN)
 
 KNN achieved an accuracy of 0.8996 and an ROC-AUC of 0.8513.
 
-Its precision was 0.6298 and recall was 0.3440.
+Its precision was 0.6298, showing reasonable positive-class prediction performance.
 
-The resulting F1-Score was 0.4450, which was lower than the F1-Scores of Decision Tree, Gaussian Naive Bayes, and Logistic Regression.
+However, its recall was relatively low at 0.3440.
+
+The resulting F1-Score was 0.4450, which was lower than Logistic Regression and Decision Tree.
+
+Therefore, KNN provided reasonable accuracy but comparatively weaker performance in identifying actual subscribers.
 
 ---
 
-### 5.4 Gaussian Naive Bayes
+### 7.4 Gaussian Naive Bayes
 
 Gaussian Naive Bayes achieved an accuracy of 0.8548 and an ROC-AUC of 0.8101.
 
-Its precision was 0.4059.
+Its precision was 0.4059, which was relatively low.
 
-However, Gaussian Naive Bayes achieved the highest recall among all five models:
+However, Gaussian Naive Bayes achieved the highest recall among all five models at 0.5198.
 
-**Recall = 0.5198**
+This means it was the most successful model at identifying customers who actually subscribed to the term deposit.
 
-This means that it identified the largest proportion of actual positive cases.
+The F1-Score was 0.4559, which was lower than the Decision Tree F1-Score.
 
-Its F1-Score was 0.4559.
-
----
-
-### 5.5 Random Forest
-
-Random Forest achieved an accuracy of 0.8977 and an ROC-AUC of 0.9225.
-
-It achieved the highest precision among all five models:
-
-**Precision = 0.7509**
-
-It also achieved the highest ROC-AUC:
-
-**ROC-AUC = 0.9225**
-
-However, its recall was only 0.1881, resulting in an F1-Score of 0.3008.
-
-Therefore, although Random Forest performed best on ROC-AUC and Precision, its lower recall resulted in a lower F1-Score.
+Therefore, Naive Bayes may be useful when identifying as many potential subscribers as possible is more important than minimizing false-positive predictions.
 
 ---
 
-## 6. Overall Model Selection
+### 7.5 Random Forest
 
-Based on the F1-Score comparison, the **Decision Tree** model was selected as the overall best-performing model.
+Random Forest achieved an accuracy of 0.8977 and the highest ROC-AUC of 0.9225.
+
+It also achieved the highest precision of 0.7509 among all five models.
+
+However, its recall was only 0.1881, which was the lowest recall among the five models.
+
+As a result, its F1-Score was only 0.3008.
+
+Therefore, although Random Forest achieved excellent ROC-AUC and precision, its low recall resulted in weaker overall F1 performance for this classification task.
+
+---
+
+## 8. Overall Winner
 
 ### Decision Tree
 
-- Accuracy: 0.9008
-- ROC-AUC: 0.8655
-- Precision: 0.6186
-- Recall: 0.3970
-- F1-Score: **0.4836**
-- MCC: 0.4446
+Based on the evaluation results, **Decision Tree** was identified as the overall best-performing model.
 
-Decision Tree achieved the highest F1-Score of **0.4836** among the five evaluated models.
+It achieved:
 
-However, different models performed best on individual metrics:
+- Highest F1-Score: **0.4836**
+- Highest MCC: **0.4446**
+- Accuracy: **0.9008**
+- Precision: **0.6186**
+- Recall: **0.3970**
+- ROC-AUC: **0.8655**
 
-- **Highest Accuracy:** Logistic Regression - 0.9012
-- **Highest ROC-AUC:** Random Forest - 0.9225
-- **Highest Precision:** Random Forest - 0.7509
-- **Highest Recall:** Gaussian Naive Bayes - 0.5198
-- **Highest F1-Score:** Decision Tree - 0.4836
-- **Highest MCC:** Decision Tree - 0.4446
+The Decision Tree provided the best overall balance between Precision and Recall according to the F1-Score criterion used for model ranking.
 
-Therefore, Decision Tree is considered the overall best model based on the F1-Score criterion used in this project.
+Although Random Forest achieved the highest ROC-AUC and Precision, its low Recall resulted in a much lower F1-Score.
+
+Gaussian Naive Bayes achieved the highest Recall, but its lower Precision resulted in a lower F1-Score than Decision Tree.
+
+Therefore, **Decision Tree is selected as the overall winner based on the highest F1-Score.**
 
 ---
 
-## 7. Streamlit Application
+## 9. Streamlit Application
 
-An interactive Streamlit application is provided through `app.py`.
+An interactive Streamlit application was developed using `app.py`.
 
-The application allows the user to:
+The application provides the following features:
 
 - Select a machine learning model
 - Upload the test dataset
-- View model performance metrics
-- View the confusion matrix
-- View the classification report
+- Preview the uploaded dataset
+- Display dataset shape
+- Generate predictions
+- Display model performance metrics
+- Display the confusion matrix
+- Display the classification report
 - Compare the performance of all five machine learning models
 
-The application uses the saved trained model files stored in the `model` directory.
+The application loads the trained model files stored in the `model` directory.
 
 ---
 
-## 8. Application Features
-
-The Streamlit application provides the following functionality:
-
-### Model Selection
-
-The user can select one of the five trained machine learning models:
-
-- Logistic Regression
-- Decision Tree
-- KNN
-- Gaussian Naive Bayes
-- Random Forest
-
-### Test Dataset Upload
-
-The application provides an option to upload the test dataset in CSV format.
-
-### Performance Summary
-
-After prediction, the application displays:
-
-- Accuracy
-- ROC-AUC
-- Precision
-- Recall
-- F1-Score
-- MCC
-
-### Confusion Matrix
-
-The application displays the confusion matrix for the selected model to show the classification results in terms of:
-
-- True Negatives
-- False Positives
-- False Negatives
-- True Positives
-
-### Classification Report
-
-The application also provides the classification report for the selected model.
-
-### Model Comparison
-
-The application provides a comparison of all five machine learning models based on the evaluation metrics.
-
----
-
-## 9. Installation
-
-Install the required Python packages using:
-
-```bash
-py -m pip install -r requirements.txt
-```
-
----
-
-## 10. Running the Application
-
-Start the Streamlit application using:
-
-```bash
-py -m streamlit run app.py
-```
-
-The application will open in the browser and provide an interactive interface for model selection, test dataset upload, prediction, evaluation, and model comparison.
-
----
-
-## 11. Project Structure
+## 10. Project Structure
 
 ```text
 ML-Assignment-2/
@@ -248,6 +222,7 @@ ML-Assignment-2/
 ├── app.py
 ├── README.md
 ├── requirements.txt
+├── test_data.csv
 │
 └── model/
     ├── logistic_regression.pkl
@@ -259,14 +234,68 @@ ML-Assignment-2/
 
 ---
 
-## 12. Conclusion
+## 11. Installation
 
-Five machine learning classification models were implemented and evaluated for the Bank Marketing classification task.
+Install the required Python packages using:
 
-The models were compared using Accuracy, ROC-AUC, Precision, Recall, F1-Score, and Matthews Correlation Coefficient.
+```bash
+py -m pip install -r requirements.txt
+```
 
-The **Decision Tree** achieved the highest F1-Score of **0.4836** and was therefore selected as the overall best-performing model based on the F1-Score criterion.
+---
 
-The results also show that different models have different strengths. Random Forest achieved the highest ROC-AUC and Precision, while Gaussian Naive Bayes achieved the highest Recall.
+## 12. Running the Application
 
-The Streamlit application provides an interactive way to select models, upload test data, view predictions and evaluation metrics, visualize the confusion matrix, view the classification report, and compare all five models.
+Start the Streamlit application using:
+
+```bash
+py -m streamlit run app.py
+```
+
+The application will open in the browser.
+
+---
+
+## 13. Using the Application
+
+1. Start the Streamlit application.
+2. Select a machine learning model from the sidebar.
+3. Upload `test_data.csv`.
+4. Review the dataset preview.
+5. View the prediction results.
+6. Review the performance metrics.
+7. View the confusion matrix.
+8. View the classification report.
+9. Compare all five models.
+
+---
+
+## 14. Trained Models
+
+The following trained model files are included in the `model` directory:
+
+- `logistic_regression.pkl`
+- `decision_tree.pkl`
+- `knn.pkl`
+- `naive_bayes.pkl`
+- `random_forest.pkl`
+
+These saved models are loaded by the Streamlit application during execution.
+
+---
+
+## 15. Conclusion
+
+This project demonstrates an end-to-end machine learning classification workflow using the Bank Marketing dataset.
+
+Five classification models were implemented and evaluated using Accuracy, ROC-AUC, Precision, Recall, F1-Score, and MCC.
+
+The experimental results show that:
+
+- **Decision Tree** achieved the highest F1-Score and was selected as the overall winner.
+- **Gaussian Naive Bayes** achieved the highest Recall.
+- **Random Forest** achieved the highest ROC-AUC and Precision.
+- **Logistic Regression** provided strong and balanced overall performance.
+- **KNN** achieved reasonable accuracy but comparatively lower recall and F1-Score.
+
+The Streamlit application provides an interactive interface for testing the trained models and visualizing their classification performance.
