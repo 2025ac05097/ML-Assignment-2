@@ -11,7 +11,7 @@ The following five classification models are implemented and evaluated:
 1. Logistic Regression
 2. Decision Tree
 3. K-Nearest Neighbors (KNN)
-4. Naive Bayes
+4. Gaussian Naive Bayes
 5. Random Forest
 
 ## Evaluation Metrics
@@ -24,6 +24,14 @@ The models are evaluated using the following performance metrics:
 - Recall
 - F1-Score
 - Matthews Correlation Coefficient (MCC)
+
+## Model Comparison
+
+All five machine learning models are compared using the above performance metrics.
+
+The models are ranked based on the highest F1-Score, as F1-Score provides a balanced measure of Precision and Recall.
+
+Based on the evaluation results, the Decision Tree model achieved the highest F1-Score of 0.4836 and was identified as the overall best-performing model among the five models evaluated.
 
 ## Streamlit Application
 
@@ -38,18 +46,9 @@ The application allows the user to:
 - View the classification report
 - Compare the performance of all five machine learning models
 
-## Project Structure
+## Installation
 
-```text
-ML-Assignment-2/
-│
-├── app.py
-├── README.md
-├── requirements.txt
-│
-└── model/
-    ├── logistic_regression.pkl
-    ├── decision_tree.pkl
-    ├── knn.pkl
-    ├── naive_bayes.pkl
-    └── random_forest.pkl
+Install the required Python packages using:
+
+```bash
+py -m pip install -r requirements.txt
